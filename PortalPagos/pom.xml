@@ -23,17 +23,25 @@
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
+        
         <!--<dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc8</artifactId>
-            <version>18.3</version>
-	</dependency>-->
-        <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc</artifactId>
             <version>7</version>
             <scope>system</scope>
             <systemPath>C:\Users\estfa\Documents\NetBeansProjects\ojdbc7.jar</systemPath>
+        </dependency>-->
+        
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc7</artifactId>
+            <version>12.2.0.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.glassfish.jersey.bundles</groupId>
+            <artifactId>jaxrs-ri</artifactId>
+            <version>2.30</version>
         </dependency>
         
         <dependency>
@@ -43,7 +51,7 @@
         </dependency>
     </dependencies>
     
-     <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
