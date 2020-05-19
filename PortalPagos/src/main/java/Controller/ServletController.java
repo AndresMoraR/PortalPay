@@ -5,11 +5,11 @@
  */
 package Controller;
 
-import Datos.PersonDataDAO;
-import Modelo.Tbl_query_pay;
+import Data.PersonDataDAO;
+import Model.Tbl_query_pay;
 
-import Datos.QueryPayDAO;
-import Modelo.Tbl_person_data;
+import Data.QueryPayDAO;
+import Model.Tbl_person_data;
 
 import java.io.IOException;
 import java.io.PrintWriter;

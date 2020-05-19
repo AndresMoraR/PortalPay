@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Datos;
+package Data;
 
-import Modelo.Tbl_query_pay;
+import Model.Tbl_query_pay;
 import java.sql.*;
 import java.util.*;
 

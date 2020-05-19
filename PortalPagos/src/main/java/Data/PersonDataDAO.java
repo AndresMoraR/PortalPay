@@ -1,6 +1,6 @@
-package Datos;
+package Data;
 
-import Modelo.Tbl_person_data;
+import Model.Tbl_person_data;
 import java.sql.*;
 
 /**
