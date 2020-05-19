@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controller;
 
 import Data.PersonDataDAO;
 import Model.Tbl_query_pay;
-
 import Data.QueryPayDAO;
 import Model.Tbl_person_data;
-
+import Data.Config;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -23,20 +17,13 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 /**
- *
- * @author Andres Mora
+ * Functions to use in Portal Pay
  */
 @WebServlet("/ServletController")
 public class ServletController extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
-        //String num_identificacion = request.getParameter("idPerson");
-        //List<Tbl_query_pay> rs_query_pay = new QueryPayDAO().get_pay(new Tbl_query_pay(num_identificacion));
-        //System.out.println("pay_pendings =" + rs_query_pay);
-        //request.setAttribute("pay_pendings", rs_query_pay);
-        //request.getRequestDispatcher("frm_pay.jsp").forward(request, response);
-                
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {                
         String action = request.getParameter("action");
         if (action != null) {
             switch (action) {
@@ -85,9 +72,10 @@ public class ServletController extends HttpServlet {
 
     private void findPayByUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession sesion = request.getSession();
+        Config c = new Config();
         System.out.println(sesion.getAttribute("id"));
         if(sesion.getAttribute("id") != null){       
-            List<Tbl_query_pay> rs_query_pay = new QueryPayDAO().get_pay(new Tbl_query_pay(sesion.getAttribute("id").toString()));
+            List<Tbl_query_pay> rs_query_pay = new QueryPayDAO().get_pay(new Tbl_query_pay(sesion.getAttribute("id").toString()), c.getCodPeriod());
             System.out.println("pay_pendings =" + rs_query_pay);
             request.setAttribute("pay_pendings", rs_query_pay); 
             request.getRequestDispatcher("frm_pay.jsp").forward(request, response);    
@@ -128,9 +116,6 @@ public class ServletController extends HttpServlet {
     
     private void accionDefault(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession sesion = request.getSession();
-        /*sesion.setAttribute("id", "");
-        sesion.setAttribute("name", "");
-        sesion.setAttribute("type", "");*/
         sesion.invalidate();
         System.out.println(sesion);
         response.sendRedirect("index.jsp");

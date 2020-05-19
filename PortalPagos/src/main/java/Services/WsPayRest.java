@@ -28,10 +28,10 @@ public class WsPayRest {
     }
     
     @GET
-    @Path("pago/{idpersona}")
+    @Path("pago/{idpersona}/{periodo}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getPays(@PathParam("idpersona") String idpersona) {
-        List<Tbl_query_pay> rs_query_pay = new QueryPayDAO().get_pay(new Tbl_query_pay(idpersona));
+    public Response getPays(@PathParam("idpersona") String idpersona, @PathParam("periodo") String periodo) {
+        List<Tbl_query_pay> rs_query_pay = new QueryPayDAO().get_pay(new Tbl_query_pay(idpersona), periodo);
             
         String json = new Gson().toJson(rs_query_pay);
         return Response.ok(json, MediaType.APPLICATION_JSON).build();

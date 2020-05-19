@@ -12,6 +12,7 @@ public class Tbl_query_pay {
     private String fecha_venta;
     private String nombre_unidad;
     private String valor_inscripcion;
+    private String fecha_pago_inscripcion;
     
     public Tbl_query_pay() {
     }
@@ -20,7 +21,7 @@ public class Tbl_query_pay {
         this.num_identificacion = num_identificacion;
     }
 
-    public Tbl_query_pay(int num_formulario, String num_identificacion, String nombre_largo, String email, String fecha_venta, String nombre_unidad, String valor_inscripcion) {
+    public Tbl_query_pay(int num_formulario, String num_identificacion, String nombre_largo, String email, String fecha_venta, String nombre_unidad, String valor_inscripcion, String fecha_pago_inscripcion) {
         this.num_formulario = num_formulario;
         this.num_identificacion = num_identificacion;
         this.nombre_largo = nombre_largo;
@@ -28,6 +29,7 @@ public class Tbl_query_pay {
         this.fecha_venta = fecha_venta;
         this.nombre_unidad = nombre_unidad;
         this.valor_inscripcion = valor_inscripcion;
+        this.fecha_pago_inscripcion = fecha_pago_inscripcion;
     }
 
     public int getNum_formulario() {
@@ -84,5 +86,13 @@ public class Tbl_query_pay {
 
     public void setValor_inscripcion(String valor_inscripcion) {
         this.valor_inscripcion = valor_inscripcion;
+    }
+
+    public String getFecha_pago_inscripcion() {
+        return fecha_pago_inscripcion;
+    }
+
+    public void setFecha_pago_inscripcion(String fecha_pago_inscripcion) {
+        this.fecha_pago_inscripcion = fecha_pago_inscripcion;
     }    
 }
