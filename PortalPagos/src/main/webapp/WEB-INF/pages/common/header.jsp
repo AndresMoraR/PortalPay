@@ -11,14 +11,14 @@
         <script src="https://kit.fontawesome.com/6a9587acee.js" crossorigin="anonymous"></script>
         <script type="text/javascript">
             var base = "${pageContext.request.contextPath}";
-                    setTimeout(function(){                         
+                    /*setTimeout(function(){                         
                         window.location = "${pageContext.request.contextPath}/ServletController?action=close"; 
-                    }, 15000);
+                    }, 30000);*/
         </script>
         <script src="${pageContext.request.contextPath}/js/jquery-3.5.1.min.js"></script>        
         <script src="${pageContext.request.contextPath}/js/popper.min.js"></script>        
         <script src="${pageContext.request.contextPath}/bootstrap-4.4.1/js/bootstrap.min.js"></script>        
-        <script type="text/javascript" src="${pageContext.request.contextPath}/js/init.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/js/actions.js"></script>
         <title>Portal de Pagos</title>
     </head>
     <body>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-md-6 text-right align-self-center">
                         <div>    
-                            <i class="fas fa-user"></i> 
+                            <i class="fas fa-user"></i> <a class="logout" href="${pageContext.request.contextPath}/ServletController?action=close"><i class="fas fa-sign-out-alt"></i></a> 
                             <h5><b><i><% out.println(session.getAttribute("name").toString()); %></i></b></h5>                           
                         </div>
                         <div>                            

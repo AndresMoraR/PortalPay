@@ -7,33 +7,35 @@ package Data;
 
 import java.sql.*;
 import javax.sql.DataSource;
-import oracle.jdbc.pool.OracleDataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 
 /**
  *
- * @author Andres Mora
+ * @author Andres Mora CREADA LA CONEXION CON UN POOL DE CONEXIONES
  */
 public class Conexion {
-    private static final String JDBC_URL = "jdbc:oracle:thin:@srvprebd-scan.colsanitas.com:1521/PSINU";
-    private static final String JDBC_USER = "bamoraro";
-    private static final String JDBC_PASSWORD = "PresInu2020";
-    
-    private static OracleDataSource dataSource;
 
-    public static DataSource getDataSource() throws SQLException {
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/virtual_pagos?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String JDBC_USER = "root";
+    private static final String JDBC_PASSWORD = "root";
+
+    private static BasicDataSource dataSource;
+
+    public static DataSource getDataSource() {
         if (dataSource == null) {
-            dataSource = new OracleDataSource();
-            dataSource.setURL(JDBC_URL);
-            dataSource.setUser(JDBC_USER);
+            dataSource = new BasicDataSource();
+            dataSource.setUrl(JDBC_URL);
+            dataSource.setUsername(JDBC_USER);
             dataSource.setPassword(JDBC_PASSWORD);
+            dataSource.setInitialSize(50);
         }
         return dataSource;
     }
-    
+
     public static Connection getConnection() throws SQLException {
         return getDataSource().getConnection();
-    } 
-    
+    }
+
     public static void close(ResultSet rs) {
         try {
             rs.close();
@@ -56,5 +58,5 @@ public class Conexion {
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-    }      
+    }
 }

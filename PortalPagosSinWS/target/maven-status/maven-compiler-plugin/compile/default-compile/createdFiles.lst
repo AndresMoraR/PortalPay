@@ -1,0 +1,9 @@
+Data\Conexion.class
+Controller\ServletController.class
+Model\Tbl_person_data.class
+Services\ConfigWsPayRest.class
+Model\Tbl_query_pay.class
+Data\QueryPayDAO.class
+Data\Config.class
+Services\WsPayRest.class
+Data\PersonDataDAO.class

@@ -16,3 +16,8 @@ body {
     opacity: .9;
     filter: alpha(opacity=80);
 }
+
+.logout{
+    color: inherit;
+    text-decoration: inherit;
+}

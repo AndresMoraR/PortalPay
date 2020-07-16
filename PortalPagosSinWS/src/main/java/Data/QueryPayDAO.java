@@ -66,10 +66,10 @@ public class QueryPayDAO {
                 tbl_qpay.setNum_identificacion(rs.getString("num_identificacion"));
                 tbl_qpay.setNombre_largo(rs.getString("nom_largo"));
                 tbl_qpay.setEmail(rs.getString("dir_email_per"));
-                tbl_qpay.setFecha_venta(rs.getString("dia_inscripcion"));
+                tbl_qpay.setFecha_venta(rs.getDate("dia_inscripcion"));
                 tbl_qpay.setNombre_unidad(rs.getString("nom_unidad"));
                 tbl_qpay.setValor_inscripcion(rs.getString("val_inscripcion"));
-                tbl_qpay.setFecha_pago_inscripcion(rs.getString("fec_limite_pago"));
+                tbl_qpay.setFecha_pago_inscripcion(rs.getDate("fec_limite_pago"));
                 list_tbl_qpay.add(tbl_qpay);
             }
 

@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author Andres Mora
@@ -9,10 +11,10 @@ public class Tbl_query_pay {
     private String num_identificacion;
     private String nombre_largo;
     private String email;
-    private String fecha_venta;
+    private Date fecha_venta;
     private String nombre_unidad;
     private String valor_inscripcion;
-    private String fecha_pago_inscripcion;
+    private Date fecha_pago_inscripcion;
     
     public Tbl_query_pay() {
     }
@@ -21,7 +23,7 @@ public class Tbl_query_pay {
         this.num_identificacion = num_identificacion;
     }
 
-    public Tbl_query_pay(int num_formulario, String num_identificacion, String nombre_largo, String email, String fecha_venta, String nombre_unidad, String valor_inscripcion, String fecha_pago_inscripcion) {
+    public Tbl_query_pay(int num_formulario, String num_identificacion, String nombre_largo, String email, Date fecha_venta, String nombre_unidad, String valor_inscripcion, Date fecha_pago_inscripcion) {
         this.num_formulario = num_formulario;
         this.num_identificacion = num_identificacion;
         this.nombre_largo = nombre_largo;
@@ -64,11 +66,11 @@ public class Tbl_query_pay {
         this.email = email;
     }
 
-    public String getFecha_venta() {
+    public Date getFecha_venta() {
         return fecha_venta;
     }
 
-    public void setFecha_venta(String fecha_venta) {
+    public void setFecha_venta(Date fecha_venta) {
         this.fecha_venta = fecha_venta;
     }
 
@@ -88,11 +90,11 @@ public class Tbl_query_pay {
         this.valor_inscripcion = valor_inscripcion;
     }
 
-    public String getFecha_pago_inscripcion() {
+    public Date getFecha_pago_inscripcion() {
         return fecha_pago_inscripcion;
     }
 
-    public void setFecha_pago_inscripcion(String fecha_pago_inscripcion) {
+    public void setFecha_pago_inscripcion(Date fecha_pago_inscripcion) {
         this.fecha_pago_inscripcion = fecha_pago_inscripcion;
     }    
 }
